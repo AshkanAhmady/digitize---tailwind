@@ -1,0 +1,7 @@
+/* @import url("http://fonts.cdnfonts.com/css/iranian-sans"); */
+/* reset original styles */
+@tailwind base;
+/* create reusable class name => (like: .primary) */
+@tailwind components;
+/* turn the tailwind classes to css styles */
+@tailwind utilities;
