@@ -181,9 +181,13 @@
             <div class="bg-white rounded-lg shadow-md p-1">
               <!-- Product Image -->
               <div
-                class="relative flex justify-center items-center bg-gray-300 rounded-lg p-4"
+                class="relative h-44 sm:h-52 md:h-64 flex justify-center items-center bg-gray-300 rounded-lg p-4"
               >
-                <img :src="product.img" alt="apple watch" />
+                <img
+                  class="max-w-full max-h-full"
+                  :src="product.img"
+                  alt="apple watch"
+                />
                 <button
                   class="w-7 h-7 rounded-full bg-gray-400 flex justify-center items-center absolute top-2 right-2 cursor-pointer"
                 >
@@ -203,7 +207,7 @@
               </div>
               <!-- Product Desc. -->
               <div
-                class="w-100 flex-col p-0.5 items-center justify-between mt-3"
+                class="w-full flex-col p-0.5 items-center justify-between mt-3"
               >
                 <div class="flex justify-between mb-2 items-center">
                   <span class="text-slate-200 text-xs md:text-base">اپل</span>
