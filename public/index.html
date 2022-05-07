@@ -14,8 +14,13 @@
   </head>
   <body class="bg-gray-100">
     <!-- App Bar -->
-    <div class="flex md:hidden justify-between items-center px-4 mt-10 mb-6">
-      <div>LOGO</div>
+    <div
+      class="flex md:hidden 300 justify-between items-center px-4 mt-10 mb-6"
+    >
+      <!-- logo -->
+      <h1 class="text-stone-800 text-xl font-black cursor-pointer">
+        <span class="text-orange-500 -ml-1.5">دیجی</span> تایز
+      </h1>
       <div>ساعت هوشمند</div>
       <div
         class="w-7 h-7 flex justify-center items-center rounded bg-white shadow-lg"
@@ -83,16 +88,18 @@
         >
       </div>
     </div>
+    <!-- Desktop Nav Bar -->
+
     <div
-      class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,1fr)] md:gap-5 p-3"
+      class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,1fr)] md:gap-8"
     >
       <!-- Side Bar -->
-      <aside class="hidden md:block col-span-3 row-span-2 lg:col-span-2">
+      <aside class="hidden md:block col-span-4 row-span-2 lg:col-span-3">
         <div class="bg-white flex-col rounded-lg p-5">
           <!-- Categories -->
-          <div x-data="{group: 1}">
+          <div x-data="{group: 1}" class="mb-7">
             <h1 class="text-orange-500 font-bold text-xl mb-5">دسته بندی</h1>
-            <ul class="mb-7">
+            <ul>
               <li
                 :class="group === 1 ? 'text-stone-800' : 'text-stone-300'"
                 class="mb-1"
@@ -100,7 +107,7 @@
                 <a
                   href="#"
                   @click="group = 1"
-                  class="flex hover:bg-gray-50 rounded-lg py-2 w-full"
+                  class="flex hover:bg-gray-50 rounded-lg p-2 w-full"
                 >
                   <div class="relative">
                     <span
@@ -132,7 +139,7 @@
                 <a
                   href="#"
                   @click="group = 2"
-                  class="flex hover:bg-gray-50 rounded-lg py-2 w-full"
+                  class="flex hover:bg-gray-50 rounded-lg p-2 w-full"
                   ><div class="relative">
                     <span
                       :class="group === 2 ? 'bg-gray-300' : 'bg-gray-100'"
@@ -160,7 +167,7 @@
                 <a
                   href="#"
                   @click="group = 3"
-                  class="py-2 hover:bg-gray-50 rounded-lg flex w-full"
+                  class="p-2 hover:bg-gray-50 rounded-lg flex w-full"
                 >
                   <div class="relative">
                     <span
@@ -187,10 +194,277 @@
               </li>
             </ul>
           </div>
+          <!-- Desktop Filters -->
+          <div>
+            <h1 class="text-orange-500 font-bold text-xl mb-5">فیلتر</h1>
+            <!-- Filtes COntent -->
+            <div x-data="{ tabOne: true, tabTwo:false, tabThree:false }">
+              <!-- Brand Filter -->
+              <div class="mb-4">
+                <!-- Head Brand Filter -->
+                <div
+                  @click="tabOne = !tabOne"
+                  class="flex justify-between cursor-pointer py-1 items-center hover:bg-gray-50 p-2 rounded-lg mb-3"
+                >
+                  <div class="flex">
+                    <div class="relative">
+                      <span
+                        class="w-5 h-5 bg-gray-100 rounded-full absolute -top-2 -right-2"
+                      ></span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 ml-1 relative"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                        />
+                      </svg>
+                    </div>
+                    <span>برند محصول</span>
+                  </div>
+                  <svg
+                    :class="tabOne ? 'rotate-180' : ''"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 transition-all duration-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <!-- Content Brand Filter -->
+                <ul
+                  x-data="{activeBrand: 1}"
+                  x-show="tabOne"
+                  class="space-y-2 p-2"
+                >
+                  <li>
+                    <label
+                      for="apple"
+                      class="w-full flex items-center py-2 cursor-pointer"
+                    >
+                      <input
+                        id="apple"
+                        name="brand"
+                        class="ml-2 form-checkbox focus:ring-white checked:after:hidden text-orange-400 checked:hover:bg-orange-400 checked:bg-orange-400 rounded border-orange-500"
+                        type="checkbox"
+                      />
+                      <span>اپل</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label
+                      for="xiaumi"
+                      class="w-full flex items-center py-2 cursor-pointer"
+                    >
+                      <input
+                        id="xiaumi"
+                        name="brand"
+                        class="ml-2 form-checkbox focus:ring-white checked:after:hidden text-orange-400 checked:hover:bg-orange-400 checked:bg-orange-400 rounded border-orange-500"
+                        type="checkbox"
+                      />
+                      <span>شیائومی</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label
+                      for="samsung"
+                      class="w-full flex items-center py-2 cursor-pointer"
+                    >
+                      <input
+                        id="samsung"
+                        name="brand"
+                        class="ml-2 form-checkbox focus:ring-white checked:after:hidden text-orange-400 checked:hover:bg-orange-400 checked:bg-orange-400 rounded border-orange-500"
+                        type="checkbox"
+                      />
+                      <span>سامسونگ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label
+                      for="huawei"
+                      class="w-full flex items-center py-2 cursor-pointer"
+                    >
+                      <input
+                        id="huawei"
+                        name="brand"
+                        class="ml-2 form-checkbox focus:ring-white checked:after:hidden text-orange-400 checked:hover:bg-orange-400 checked:bg-orange-400 rounded border-orange-500"
+                        type="checkbox"
+                      />
+                      <span>هواوی</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <!-- Color Filter -->
+              <div class="mb-4">
+                <!-- Head Color Filter -->
+                <div
+                  @click="tabTwo = !tabTwo"
+                  class="flex justify-between cursor-pointer py-1 items-center hover:bg-gray-50 rounded-lg p-2 mb-3"
+                >
+                  <div class="flex">
+                    <div class="relative">
+                      <span
+                        class="w-5 h-5 bg-gray-100 rounded-full absolute -top-2 -right-2"
+                      ></span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 ml-1 relative"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                        />
+                      </svg>
+                    </div>
+                    <span>رنگ محصول</span>
+                  </div>
+                  <svg
+                    :class="tabTwo ? 'rotate-180' : ''"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 transition-all duration-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <!-- Content Color Filter -->
+                <ul
+                  x-data="{activeColor: 1}"
+                  x-show="tabTwo"
+                  class="space-y-2 p-2"
+                >
+                  <li>
+                    <label
+                      for="blue"
+                      class="w-full flex items-center py-2 cursor-pointer"
+                    >
+                      <input
+                        id="blue"
+                        name="color"
+                        class="ml-2 form-checkbox focus:ring-white checked:after:hidden text-orange-400 checked:hover:bg-orange-400 checked:bg-orange-400 rounded border-orange-500"
+                        type="checkbox"
+                      />
+                      <span>آبی</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label
+                      for="red"
+                      class="w-full flex items-center py-2 cursor-pointer"
+                    >
+                      <input
+                        id="red"
+                        name="color"
+                        class="ml-2 form-checkbox focus:ring-white checked:after:hidden text-orange-400 checked:hover:bg-orange-400 checked:bg-orange-400 rounded border-orange-500"
+                        type="checkbox"
+                      />
+                      <span>قرمز</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label
+                      for="black"
+                      class="w-full flex items-center py-2 cursor-pointer"
+                    >
+                      <input
+                        id="black"
+                        name="color"
+                        class="ml-2 form-checkbox focus:ring-white checked:after:hidden text-orange-400 checked:hover:bg-orange-400 checked:bg-orange-400 rounded border-orange-500"
+                        type="checkbox"
+                      />
+                      <span>مشکی</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label
+                      for="orange"
+                      class="w-full flex items-center py-2 cursor-pointer"
+                    >
+                      <input
+                        id="orange"
+                        name="color"
+                        class="ml-2 form-checkbox focus:ring-white checked:after:hidden text-orange-400 checked:hover:bg-orange-400 checked:bg-orange-400 rounded border-orange-500"
+                        type="checkbox"
+                      />
+                      <span>نارنجی</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <!-- Price Filter -->
+              <div class="mb-4">
+                <!-- Head Price Filter -->
+                <div
+                  @click="tabThree = !tabThree"
+                  class="flex justify-between cursor-pointer py-1 items-center hover:bg-gray-50 rounded-lg p-2 mb-3"
+                >
+                  <div class="flex">
+                    <div class="relative">
+                      <span
+                        class="w-5 h-5 bg-gray-100 rounded-full absolute -top-2 -right-2"
+                      ></span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 ml-1 relative"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <span>محدوده قیمت</span>
+                  </div>
+                  <svg
+                    :class="tabThree ? 'rotate-180' : ''"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 transition-all duration-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <!-- Content Color Filter -->
+                <div x-show="tabThree" class="p-2">...</div>
+              </div>
+            </div>
+          </div>
         </div>
       </aside>
       <!-- Sort Section -->
-      <div class="hidden md:block col-span-9 lg:col-span-10">
+      <div class="hidden md:block col-span-8 lg:col-span-9">
         <div
           x-data="{sort: 1, activeClass: 'text-slate-800 font-bold'}"
           class="bg-white px-4 flex items-center text-gray-400 gap-4 rounded-lg"
@@ -260,7 +534,7 @@
         </div>
       </div>
       <!-- Products Section -->
-      <article class="col-span-12 md:col-span-9 lg:col-span-10">
+      <article class="col-span-12 md:col-span-8 lg:col-span-9">
         <div
           x-data="{ 
         products: [
