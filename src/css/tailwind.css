@@ -5,3 +5,19 @@
 @tailwind components;
 /* turn the tailwind classes to css styles */
 @tailwind utilities;
+
+/* change scrollBar style */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(179, 179, 179);
+  border-radius: 50px;
+}
