@@ -572,6 +572,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-80 {
   margin-left: 20rem;
 }
+.ml-6 {
+  margin-left: 1.5rem;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -643,6 +646,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .max-w-2xl {
   max-width: 42rem;
+}
+.max-w-xl {
+  max-width: 36rem;
 }
 .flex-auto {
   flex: 1 1 auto;
@@ -819,6 +825,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.px-60 {
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.pl-3 {
+  padding-left: 0.75rem;
+}
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -988,11 +1017,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:h-64 {
     height: 16rem;
   }
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .md\:grid-rows-\[55px_minmax\(500px\2c 1fr\)\] {
     grid-template-rows: 55px minmax(500px,1fr);
   }
   .md\:gap-8 {
     gap: 2rem;
+  }
+  .md\:gap-6 {
+    gap: 1.5rem;
+  }
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
   .md\:gap-x-5 {
     -moz-column-gap: 1.25rem;
@@ -1000,6 +1038,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:gap-y-7 {
     row-gap: 1.75rem;
+  }
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .md\:text-base {
     font-size: 1rem;
@@ -1016,6 +1062,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .lg\:gap-x-2 {
     -moz-column-gap: 0.5rem;
          column-gap: 0.5rem;
@@ -1027,6 +1076,45 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .xl\:col-span-10 {
+    grid-column: span 10 / span 10;
+  }
+  .xl\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .xl\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .xl\:px-40 {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  .xl\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .xl\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .xl\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .xl\:px-7 {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 @media (min-width: 1536px) {
