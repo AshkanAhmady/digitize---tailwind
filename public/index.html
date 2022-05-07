@@ -14,9 +14,7 @@
   </head>
   <body class="bg-gray-100">
     <!-- App Bar -->
-    <div
-      class="flex md:hidden 300 justify-between items-center px-4 mt-10 mb-6"
-    >
+    <div class="flex md:hidden 300 justify-between items-center px-4 my-6">
       <!-- logo -->
       <h1 class="text-stone-800 text-xl font-black cursor-pointer">
         <span class="text-orange-500 -ml-1.5">دیجی</span> تایز
@@ -777,7 +775,94 @@
         </div>
       </article>
     </div>
-
+    <!-- Button Navigation -->
+    <div
+      class="w-full border-t-2 shadow-[0_-4px_8px_0_rgba(0,0,0,0.1)] fixed bottom-0 left-0 right-0 rounded-tr-lg rounded-tl-lg bg-white md:hidden"
+    >
+      <nav>
+        <ul
+          x-data="{navigation: 1}"
+          class="flex justify-around text-stone-800 text-xs"
+        >
+          <li>
+            <a @click="navigation = 1" class="p-3 flex items-center" href="#">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  :class="navigation === 1 ? 'fill-stone-800' : 'text-gray-400'"
+                  class="h-7 w-7"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                  />
+                </svg>
+              </div>
+              <span class="mr-1" x-show="navigation === 1">خانه</span>
+            </a>
+          </li>
+          <li>
+            <a @click="navigation = 2" class="p-3 flex items-center" href="#">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  :class="navigation === 2 ? 'fill-stone-800' : 'text-gray-400'"
+                  class="h-7 w-7"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                  />
+                </svg>
+              </div>
+              <span class="mr-1" x-show="navigation === 2">دسته بندی</span>
+            </a>
+          </li>
+          <li>
+            <a @click="navigation = 3" class="p-3 flex items-center" href="#">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  :class="navigation === 3 ? 'fill-stone-800' : 'text-gray-400'"
+                  class="h-7 w-7"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span class="mr-1" x-show="navigation === 3">سبد خرید</span>
+            </a>
+          </li>
+          <li>
+            <a @click="navigation = 4" class="p-3 flex items-center" href="#">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  :class="navigation === 4 ? 'fill-stone-800' : 'text-gray-400'"
+                  class="h-7 w-7"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span class="mr-1" x-show="navigation === 4">علاقه مندی ها</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <script src="//unpkg.com/alpinejs" defer></script>
   </body>
 </html>
