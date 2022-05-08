@@ -190,7 +190,7 @@
     >
       <!-- Side Bar -->
       <aside
-        class="hidden md:block col-span-4 row-span-2 lg:col-span-3 xl:col-span-2"
+        class="hidden md:block col-span-3 row-span-2 lg:col-span-3 xl:col-span-2"
       >
         <div
           class="bg-white flex-col rounded-lg p-5 pl-3 max-h-[calc(100vh_-_130px)] overflow-auto sticky top-[92px]"
@@ -198,7 +198,7 @@
           <!-- Categories -->
           <div x-data="{group: 1}" class="mb-7">
             <h1 class="text-orange-500 font-bold text-xl mb-5">دسته بندی</h1>
-            <ul>
+            <ul class="md:text-sm lg:text-base">
               <li
                 :class="group === 1 ? 'text-stone-800' : 'text-stone-300'"
                 class="mb-1"
@@ -296,7 +296,7 @@
         </div>
       </aside>
       <!-- BreadCromp Section -->
-      <div class="hidden md:block col-span-8 lg:col-span-9 xl:col-span-10">
+      <div class="hidden md:block col-span-9 lg:col-span-9 xl:col-span-10">
         <div class="bg-white px-4 flex items-center gap-x-2 rounded-lg py-4">
           <span class="text-orange-500 cursor-pointer">تلفن همراه</span>
           <span class="text-slate-800">
@@ -336,41 +336,48 @@
         </div>
       </div>
       <!-- Products Section -->
-      <article class="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-10">
-        <div class="flex justify-center bg-white rounded-lg md:p-4">
+      <article class="col-span-12 md:col-span-9 lg:col-span-9 xl:col-span-10">
+        <div class="flex justify-center md:bg-white rounded-lg md:p-4">
           <!-- Single Product -->
           <div
             class="flex md:flex-auto flex-col md:flex-row md:justify-start items-center md:items-start px-4 md:px-0"
           >
             <!-- Product Image -->
-            <div class="w-3/4 md:w-auto mb-7 md:mb-0 flex justify-center">
+            <div
+              class="w-3/4 md:w-1/3 xl:w-auto mb-7 md:mb-0 flex justify-center"
+            >
               <img src="/assets/imgs/iphone13.png" alt="" />
             </div>
-            <div class="flex flex-col md:mr-8">
+            <div class="flex-auto flex-col md:mr-2 xl:mr-8">
               <!-- Product Model -->
               <div
                 class="w-full flex flex-col items-center mb-5 md:items-start"
               >
-                <h1 class="font-bold text-lg mb-1 md:text-2xl">
+                <h1 class="font-bold text-lg mb-1 lg:text-2xl">
                   گوشی آیفون 13 pro max
                 </h1>
-                <h2 class="text-gray-500 text-sm font-light md:text-lg">
+                <h2 class="text-gray-500 text-sm font-light lg:text-lg">
                   Apple Iphone 13 128 GB
                 </h2>
               </div>
+              <hr class="hidden my-2 mb-4 md:block" />
               <!-- Product Colors -->
-              <div class="w-full flex items-center justify-around mb-5">
-                <span class="text-slate-800">انتخاب زنگ:</span>
+              <div
+                class="w-full flex items-center md:justify-start justify-around mb-5"
+              >
+                <span class="text-slate-800 md:ml-8 xl:text-lg"
+                  >انتخاب زنگ:</span
+                >
                 <div x-data="{ color: 'red' }" class="flex">
                   <div
                     @click="color = 'red'"
                     :class="color === 'red' ? 'ring-1 ring-red-400' : ''"
-                    class="w-7 h-7 sm:w-8 sm:h-8 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-red-400 border-2 border-white"
+                    class="w-6 h-6 sm:w-7 sm:h-7 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-red-400 border-2 border-white"
                   >
                     <svg
                       x-show="color === 'red'"
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 sm:h-5 sm:w-5 stroke-white"
+                      class="h-3 w-3 sm:h-4 sm:w-4 stroke-white"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -386,12 +393,12 @@
                   <div
                     @click="color = 'blue'"
                     :class="color === 'blue' ? 'ring-1 ring-blue-400' : ''"
-                    class="w-7 h-7 sm:w-8 sm:h-8 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-blue-400 border-2 border-white"
+                    class="w-6 h-6 sm:w-7 sm:h-7 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-blue-400 border-2 border-white"
                   >
                     <svg
                       x-show="color === 'blue'"
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 sm:h-5 sm:w-5 stroke-white"
+                      class="h-3 w-3 sm:h-4 sm:w-4 stroke-white"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -407,12 +414,12 @@
                   <div
                     @click="color = 'black'"
                     :class="color === 'black' ? 'ring-1 ring-black' : ''"
-                    class="w-7 h-7 sm:w-8 sm:h-8 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-black border-2 border-white"
+                    class="w-6 h-6 sm:w-7 sm:h-7 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-black border-2 border-white"
                   >
                     <svg
                       x-show="color === 'black'"
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 sm:h-5 sm:w-5 stroke-white"
+                      class="h-3 w-3 sm:h-4 sm:w-4 stroke-white"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -428,12 +435,12 @@
                   <div
                     @click="color = 'yellow'"
                     :class="color === 'yellow' ? 'ring-1 ring-yellow-500' : ''"
-                    class="w-7 h-7 sm:w-8 sm:h-8 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-yellow-500 border-2 border-white"
+                    class="w-6 h-6 sm:w-7 sm:h-7 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-yellow-500 border-2 border-white"
                   >
                     <svg
                       x-show="color === 'yellow'"
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 sm:h-5 sm:w-5 stroke-white"
+                      class="h-3 w-3 sm:h-4 sm:w-4 stroke-white"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -531,7 +538,9 @@
             </div>
           </div>
           <!-- seller details -->
-          <div class="hidden md:flex w-1/4 bg-blue-500">sds</div>
+          <div class="hidden md:flex w-2/5 lg:w-1/3 xl:w-1/4 bg-blue-500">
+            sds
+          </div>
         </div>
       </article>
     </div>
