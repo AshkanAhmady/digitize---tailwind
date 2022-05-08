@@ -10,6 +10,7 @@
       type="text/css"
     />
     <link rel="stylesheet" href="./build/tailwind.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>singleProduct</title>
   </head>
   <body class="bg-gray-100">
@@ -56,7 +57,7 @@
       </div>
     </div>
     <!-- Bread Crumb -->
-    <div class="flex items-center gap-x-1 text-sm px-4">
+    <div class="flex items-center gap-x-1 text-sm px-4 mb-7">
       <span class="text-orange-500 cursor-pointer">تلفن همراه</span>
       <span class="text-slate-800">
         <svg
@@ -92,6 +93,108 @@
         </svg>
       </span>
       <span class="text-gray-500">آیفون۱۳</span>
+    </div>
+    <!-- Single Product -->
+    <div class="flex flex-col items-center px-4">
+      <!-- Product Image -->
+      <div class="w-3/4 mb-7">
+        <img src="/assets/imgs/iphone13.png" alt="" />
+      </div>
+      <!-- Product Model -->
+      <div class="w-full flex flex-col items-center mb-5">
+        <h1 class="font-bold text-lg mb-1">گوشی آیفون 13 pro max</h1>
+        <h2 class="text-gray-500 text-sm font-light">Apple Iphone 13 128 GB</h2>
+      </div>
+      <!-- Product Colors -->
+      <div class="w-full flex items-center justify-around mb-5">
+        <span class="text-slate-800">انتخاب زنگ:</span>
+        <div x-data="{ color: 'red' }" class="flex">
+          <div
+            @click="color = 'red'"
+            :class="color === 'red' ? 'ring-1 ring-red-400' : ''"
+            class="w-7 h-7 sm:w-8 sm:h-8 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-red-400 border-2 border-white"
+          >
+            <svg
+              x-show="color === 'red'"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 sm:h-5 sm:w-5 stroke-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+          <div
+            @click="color = 'blue'"
+            :class="color === 'blue' ? 'ring-1 ring-blue-400' : ''"
+            class="w-7 h-7 sm:w-8 sm:h-8 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-blue-400 border-2 border-white"
+          >
+            <svg
+              x-show="color === 'blue'"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 sm:h-5 sm:w-5 stroke-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+          <div
+            @click="color = 'black'"
+            :class="color === 'black' ? 'ring-1 ring-black' : ''"
+            class="w-7 h-7 sm:w-8 sm:h-8 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-black border-2 border-white"
+          >
+            <svg
+              x-show="color === 'black'"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 sm:h-5 sm:w-5 stroke-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+          <div
+            @click="color = 'yellow'"
+            :class="color === 'yellow' ? 'ring-1 ring-yellow-500' : ''"
+            class="w-7 h-7 sm:w-8 sm:h-8 flex justify-center items-center -mr-1.5 rounded-full cursor-pointer bg-yellow-500 border-2 border-white"
+          >
+            <svg
+              x-show="color === 'yellow'"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 sm:h-5 sm:w-5 stroke-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
