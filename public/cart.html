@@ -144,55 +144,40 @@
         <button class="text-orange-500 cursor-pointer">بازگشت به خانه</button>
       </div>
       <!-- Cart Items -->
-      <div class="flex flex-col gap-2 col-span-12 md:col-span-8">
+      <div
+        x-data="{ products: [
+            { id: 1, title: 'اپل هوشمند سری 5', price: '2,570,000 تومان', quantity: '1', img: '/assets/imgs/appleWatch.png' },
+            { id: 2, title: 'اپل هوشمند سری 6', price: '1,480,000 تومان', quantity: '4', img: '/assets/imgs/appleWatch2.png' },
+            { id: 3, title: 'اپل هوشمند سری 4', price: '3,100,000 تومان', quantity: '6', img: '/assets/imgs/appleWatch3.png' },
+            { id: 4, title: 'اپل هوشمند سری 7', price: '3,150,000 تومان', quantity: '3', img: '/assets/imgs/appleWatch4.png' },
+        ]}"
+        class="flex pb-24 md:pb-0 flex-col gap-2 col-span-12 md:col-span-8"
+      >
         <!-- item -->
-        <div
-          class="bg-white h-20 md:h-32 p-2 md:p-4 shadow gap-2 md:gap-4 flex items-stretch rounded-lg"
-        >
-          <!-- Product Image -->
-          <div class="flex items-center">
-            <img
-              class="w-10 h-auto md:h-full md:w-auto"
-              src="/assets/imgs/appleWatch.png"
-              alt=""
-            />
-          </div>
-          <!-- Product Name&Price -->
-          <div class="flex-auto h-full">
-            <div
-              class="flex h-full flex-col text-xs md:text-base justify-around font-medium text-slate-800"
-            >
-              <span>ساعت هوشمند اپل سری 6</span>
-              <span class="text-orange-500">2,250,000 تومان</span>
+        <template x-for="product in products" :key="product.id">
+          <div
+            class="bg-white h-20 md:h-32 p-2 md:p-4 shadow gap-2 md:gap-4 flex items-stretch rounded-lg"
+          >
+            <!-- Product Image -->
+            <div class="flex h-full items-center">
+              <img class="w-auto h-full" :src="product.img" alt="apple watch" />
             </div>
-          </div>
-          <!-- Close & number -->
-          <div class="h-full flex flex-col justify-between items-end">
-            <!-- Close BTN -->
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 md:h-6 md:w-6 stroke-orange-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </div>
-            <div class="flex gap-2 items-center">
-              <!-- Incement BTN -->
+            <!-- Product Name&Price -->
+            <div class="flex-auto h-full">
               <div
-                class="w-5 h-5 md:w-7 md:h-7 bg-gray-300 rounded-full flex justify-center items-center"
+                class="flex h-full flex-col text-xs md:text-base justify-around font-medium text-slate-800"
               >
+                <span x-text="product.title"></span>
+                <span x-text="product.price" class="text-orange-500"></span>
+              </div>
+            </div>
+            <!-- Close & number -->
+            <div class="h-full flex flex-col justify-between items-end">
+              <!-- Close BTN -->
+              <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-3 w-3 md:h-4 md:w-4"
+                  class="h-4 w-4 md:h-6 md:w-6 stroke-orange-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -201,35 +186,55 @@
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M12 4v16m8-8H4"
+                    d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
               </div>
-              <div
-                class="border w-4 h-6 md:w-5 md:h-8 pt-1 border-orange-500 rounded-md flex justify-center items-center p-0.5"
-              >
-                1
-              </div>
-              <!-- Decrement BTN -->
-              <div
-                class="w-5 h-5 md:w-7 md:h-7 bg-red-100 rounded-full flex justify-center items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-3 w-3 md:h-4 md:w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+              <div class="flex gap-2 items-center">
+                <!-- Incement BTN -->
+                <div
+                  class="w-5 h-5 md:w-7 md:h-7 bg-gray-300 rounded-full flex justify-center items-center"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-3 w-3 md:h-4 md:w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </div>
+                <div
+                  x-text="product.quantity"
+                  class="border w-4 h-6 md:w-5 md:h-8 pt-1 border-orange-500 rounded-md flex justify-center items-center p-0.5"
+                ></div>
+                <!-- Decrement BTN -->
+                <div
+                  class="w-5 h-5 md:w-7 md:h-7 bg-red-100 rounded-full flex justify-center items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-3 w-3 md:h-4 md:w-4"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </template>
       </div>
       <!-- Cart Summery -->
       <div class="hidden md:flex items-start col-span-4">
