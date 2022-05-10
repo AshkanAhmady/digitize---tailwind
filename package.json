@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "postcss ./src/css/tailwind.css -o ./public/build/tailwind.css --watch",
-    "prod": "cross-env NODE_ENV=production postcss ./src/css/tailwind.css -o ./public/build/tailwind.css --watch"
+    "build": "cross-env NODE_ENV=production postcss ./src/css/tailwind.css -o ./public/build/tailwind.css"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.1",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.1.7"
   }
 }
